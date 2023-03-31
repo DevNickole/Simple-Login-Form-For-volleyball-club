@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  --formcolor: rgb(20, 25, 33);
+  height: 100vh;
+  font-size: 16px;
+  font-family: "Roboto Condensed", sans-serif;
+  display: flex;
+  align-items: center;
+  background-image: url("bgmain.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px;
+}
+form {
+  border: 1px solid black;
+  height: 600px;
+  width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 50px;
+  background-color: var(--formcolor);
+}
+h1 {
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  z-index: 1;
+}
+input {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  background-color: transparent;
+  cursor: pointer;
+
+  z-index: 1;
+}
+.division label {
+  position: absolute;
+  left: 10px;
+  bottom: 18px;
+  z-index: 0;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  z-index: -1;
+}
+form::before {
+  content: " ";
+  position: absolute;
+  height: 200px;
+  width: 1000px;
+  top: 40%;
+  left: -70%;
+  background-color: rgb(241, 131, 40);
+  animation: rotate 3s linear infinite;
+  z-index: -1;
+}
+button {
+  margin-top: 50px;
+  height: 40px;
+  width: 100px;
+  z-index: 1;
+  background-color: white;
+  margin: auto;
+  font-size: larger;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s ease;
+  box-shadow: 5px 8px 0px black;
+}
+.container {
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.division {
+  height: 60px;
+  position: relative;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 1;
+}
+
+input:focus ~ label {
+  transform: translateY(-50px);
+  color: white;
+  font-size: 20px;
+  z-index: 1;
+}
+input:not(:placeholder-shown) ~ label {
+  transform: translateY(-50px);
+  color: white;
+  font-size: 20px;
+  z-index: 1;
+}
+button:hover {
+  background-color: rgb(241, 131, 40);
+  box-shadow: none;
+  color: white;
+}
+button:active {
+  box-shadow: none;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
