@@ -18,7 +18,8 @@ body {
 form {
   border: 1px solid black;
   height: 600px;
-  width: 400px;
+  min-width: 200px;
+  max-width: 400px;
   padding: 20px;
   border-radius: 20px;
   display: flex;
@@ -59,10 +60,10 @@ input {
 form::before {
   content: " ";
   position: absolute;
-  height: 200px;
-  width: 1000px;
-  top: 40%;
-  left: -70%;
+  height: 130%;
+  width: 120px;
+  top: -10%;
+  left: 40%;
   background-color: rgb(241, 131, 40);
   animation: rotate 3s linear infinite;
   z-index: -1;
